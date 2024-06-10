@@ -24,4 +24,4 @@ jobs:
       run: mvn deploy --settings .maven/settings.xml
         
     - name: Deploy to Cloudhub 
-      run: mvn deploy -DmuleDeploy  -Dconnected_app_client_id="${{secrets.CONNECTED_APP_CLIENT_ID}}" -Dconnected_app_secret="${{secrets.CONNECTED_APP_CLIENT_SECRET}}" --settings .maven/settings.xml 
+      run: mvn deploy -DmuleDeploy -Denviron="${{vars.ENVIRONMENT}}" -Dconnected_app_client_id="${{secrets.CONNECTED_APP_CLIENT_ID}}" -Dconnected_app_secret="${{secrets.CONNECTED_APP_CLIENT_SECRET}}" --settings .maven/settings.xml 
